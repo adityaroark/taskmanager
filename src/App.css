@@ -1,38 +1,111 @@
-.App {
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+h1 {
+  font-size: 24px;
+  color: #333; /* Dark gray for text */
+  text-align: center; /* Center the heading */
+}
+
+h3 {
+  font-size: 18px;
+  color: #555; /* Medium gray */
+  margin-top: 20px;
+}
+
+button {
+  background-color: #007bff; /* Elegant blue */
+  color: white;
+  border: none;
+  padding: 10px 15px; /* Adjust padding for more spacing */
+  cursor: pointer;
+  margin-top: 10px;
+  border-radius: 4px; /* Rounded corners */
+  font-size: 14px; /* Increase font size */
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Calendar Styles */
+.calendar-container {
+  margin-bottom: 20px;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+}
+
+.calendar .day {
+  padding: 15px;
+  color: #000; /* Black text color */
+  background-color: #fff; /* White background */
+  border: 1px solid #ccc; /* Light gray border */
   text-align: center;
+  cursor: pointer;
+  border-radius: 4px; /* Rounded corners */
+  font-size: 14px; /* Adjust font size */
+  transition: background-color 0.3s, color 0.3s;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.calendar .day:hover {
+  background-color: #f0f0f0; /* Light gray on hover */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Background Color Styles */
+.background-green {
+  background-color: #d4edda; /* Light green */
+  color: #155724; /* Dark green text */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.background-yellow {
+  background-color: #fff3cd; /* Light yellow */
+  color: #856404; /* Dark yellow text */
+}
+
+.background-red {
+  background-color: #f8d7da; /* Light red */
+  color: #721c24; /* Dark red text */
+}
+
+.background-gray {
+  background-color: #e0e0e0; /* Light gray */
+  color: #6c757d; /* Dark gray text */
+}
+
+/* Task Form Styles */
+.task-section {
+  margin-top: 20px;
+}
+
+.task-form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.task-form input,
+.task-form select,
+.task-form button {
+  font-size: 14px; /* Adjust font size */
+  margin-bottom: 10px; /* Space between inputs */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Task List Styles */
+.task-list {
+  margin-top: 20px;
 }
