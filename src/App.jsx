@@ -6,9 +6,9 @@ import './App.css';
 
 function App() {
   const [tasks, setTasks] = useState({
-    '2024-09-01': { status: 'done', task: 'Complete the report' },
-    '2024-09-02': { status: 'in-progress', task: 'Work on alumni project' },
-    '2024-09-03': { status: 'undone', task: 'Meeting with the team' },
+    // '2024-09-01': { status: '', task: '' },
+    // '2024-09-02': { status: '', task: '' },
+    // '2024-09-03': { status: '', task: '' },
   });
 
   const [currentDate, setCurrentDate] = useState(new Date());
@@ -36,17 +36,20 @@ function App() {
     }
   };
 
+  const handleDateSelection = (date) => {
+    setSelectedDate(date);
+    setSelectedTask(tasks[date] || { task: 'No task assigned', status: 'neutral' });
+  };
+
   return (
     <div className="app-container">
       <h1>Task Calendar</h1>
       <Calendar
         currentDate={currentDate}
         tasks={tasks}
-        onSelectDate={(date, task) => {
-          setSelectedDate(date);
-          setSelectedTask(task);
-        }}
+        onSelectDate={handleDateSelection}
         setCurrentDate={setCurrentDate}
+        selectedDate={selectedDate}
       />
       <TaskForm addTask={addTask} selectedDate={selectedDate} />
       <TaskList
